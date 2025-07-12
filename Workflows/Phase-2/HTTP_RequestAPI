@@ -1,0 +1,36 @@
+//Get Campaign Details from Gophish Via API
+
+--GoPhish--
+
+curl -k -H "Authorization: Bearer YOUR_BEARER_TOKEN_HERE" \
+     https://x.x.x.x/api/campaigns/
+
+
+js code ----
+const https = require('https');
+
+const url = 'https://x.x.x.x1/api/campaigns/';
+const token = 'YOUR_BEARER_TOKEN_HERE;
+
+const agent = new https.Agent({ rejectUnauthorized: false }); // Ignore self-signed cert errors
+
+fetch(url, {
+  method: 'GET',
+  headers: {
+    'Authorization': `Bearer ${token}`,
+    'Accept': 'application/json',
+  },
+  agent: agent
+})
+  .then(res => {
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+    return res.json();
+  })
+  .then(data => {
+    console.log('Campaign data:', data);
+  })
+  .catch(error => {
+    console.error('Error fetching campaign data:', error);
+  });
