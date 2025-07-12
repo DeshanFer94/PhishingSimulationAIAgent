@@ -16,6 +16,8 @@ This project automates phishing simulation campaigns by integrating an AI Agent 
 
 ### Phase 1: Phishing Email and Landing Page Generation with Approval 
 
+<img width="1133" height="359" alt="Image" src="https://github.com/user-attachments/assets/6d89b28d-de0b-40de-b529-79f1311709b7" />
+
 Trigger: Manual execution or scheduled monthly (15th–21st, weekdays).
 
 Process:
