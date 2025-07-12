@@ -1,0 +1,30 @@
+Generate a report for below Phishing Analysis.  
+
+Campaign Name : {{ $json.campaignName }}
+Total users: {{ $json.totalTargets }}
+Email Sent: {{ $json.emailSent }}
+Email Clicked : {{ $json.clicked }}
+Data Submitted : {{ $json.submitted }}
+Phishing Email Clicked Rate: {{ $json.clickRate }}
+Phishing Email Data Submission Rate: {{ $json.submissionRate }}
+
+Phisned Users: 
+{{ $json.users }}
+
+Generate a Report which can send via an Email for suite.
+
+Generate in a way that can be presented to Csuite
+
+
+
+Requirements
+
+    Title the report with the campaign name
+
+    Begin with an executive summary that highlights risk, impact, and key observations
+
+    Include a section with numerical performance metrics
+
+    Include a brief analytical section that discusses user behavior, susceptibility, and security implications
+
+    Do not include explanations about how the report is generated or options for formats. Return only the completed report text.
