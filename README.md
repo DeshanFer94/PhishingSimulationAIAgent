@@ -10,3 +10,36 @@ This project automates phishing simulation campaigns by integrating an AI Agent 
 - Campaign Data Analysis: Retrieves GoPhish campaign data, analyzes user interactions (e.g., email opens, link clicks, form submissions), and calculates key metrics like click and submission rates.
 - Executive Reporting: Produces polished, management-ready HTML reports with risk assessments, color-coded risk levels, behavioral insights, and recommended security actions.
 - Automated Report Delivery: Emails analysis reports directly to management for seamless communication.
+
+
+## Architecture & Workflow
+
+### Phase 1: Phishing Email and Landing Page Generation with Approval 
+
+Trigger: Manual execution or scheduled monthly (15th–21st, weekdays).
+
+Process:
+Iterates through target departments (e.g., Finance, HR, IT).
+Uses Google Gemini LLM to generate valid HTML phishing emails and landing pages tailored to each department.
+Parses AI-generated output to extract templates and content.
+Sends approval requests with generated content to stakeholders via email.
+Outcome: Approved templates ready for deployment in GoPhish campaigns.
+
+### Phase 2: Campaign Results Retrieval, Analysis, and Reporting
+
+Trigger: Cron job, typically in the 4th week of each month.
+
+Process:
+Retrieves campaign data via GoPhish API for the current month.
+Analyzes user interactions (e.g., email opens, link clicks, data submissions).
+
+Uses Gemini LLM to generate an executive HTML report, including:
+Risk Assessment: Color-coded risk levels based on user interactions.
+Key Metrics: Click rates, submission rates, and conversion rates.
+Behavioral Insights: Patterns in user responses and vulnerabilities.
+Recommendations: Actionable steps to improve security awareness.
+Emails the HTML report to management.
+Outcome: Comprehensive, automated reporting for stakeholders.
+
+
+
